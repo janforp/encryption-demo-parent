@@ -6,7 +6,12 @@
 	<groupId>com.janita.encryption</groupId>
 	<artifactId>encryption-demo-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>rsa-encryption</module>
+		<module>base64</module>
+		<module>md5</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>encryption-demo-parent</name>
 	<description>Demo project for Spring Boot</description>
@@ -22,6 +27,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+
+		<bcprov-jdk14.version>1.50</bcprov-jdk14.version>
 	</properties>
 
 	<dependencies>
@@ -36,6 +43,16 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk14</artifactId>
+				<version>${bcprov-jdk14.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
