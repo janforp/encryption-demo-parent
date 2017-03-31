@@ -10,6 +10,7 @@
 		<module>rsa-encryption</module>
 		<module>base64</module>
 		<module>md5</module>
+		<module>aes</module>
 	</modules>
 	<packaging>pom</packaging>
 
